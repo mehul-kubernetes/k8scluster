@@ -52,3 +52,5 @@ sudo apt install -y kubelet kubeadm kubectl
 
 sudo apt-mark hold kubelet kubeadm kubectl
 
+sudo kubeadm init --apiserver-advertise-address=10.251.0.11 --pod-network-cidr=10.0.0.0/8 --ignore-preflight-errors=all   
+
