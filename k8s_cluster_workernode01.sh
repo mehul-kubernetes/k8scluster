@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt upgrade
 sudo apt install net-tools 
-sudo hostnamectl set-hostname workernode02
+sudo hostnamectl set-hostname workernode01
 sudo swapoff -a 
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
