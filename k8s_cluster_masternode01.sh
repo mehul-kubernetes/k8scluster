@@ -20,6 +20,7 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
 
+
 sudo sysctl --system
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 
