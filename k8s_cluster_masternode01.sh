@@ -1,7 +1,8 @@
-sudo apt update
-sudo apt upgrade
-sudo apt install net-tools 
+sudo apt-get  update
+sudo apt-get upgrade
+sudo apt-get install net-tools 
 sudo hostnamectl set-hostname masternode01
+
 sudo swapoff -a 
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
@@ -20,12 +21,12 @@ net.ipv4.ip_forward                 = 1
 EOF
 
 sudo sysctl --system
-apt-get install ca-certificates curl gnupg lsb-release -y
+sudo apt-get install ca-certificates curl gnupg lsb-release -y
 
 sudo mkdir -p /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update -y
 sudo apt-get install containerd.io -y
@@ -39,8 +40,8 @@ sudo systemctl enable containerd
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+sudo echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 
 sudo apt-get update
