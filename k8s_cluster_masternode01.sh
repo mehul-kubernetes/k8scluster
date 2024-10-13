@@ -1,6 +1,5 @@
 sudo apt-get  update
 sudo apt-get upgrade
-sudo apt-get install net-tools 
 sudo hostnamectl set-hostname masternode01
 
 sudo swapoff -a 
