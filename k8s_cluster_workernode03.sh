@@ -1,6 +1,6 @@
 sudo apt-get  update
 sudo apt-get upgrade
-sudo hostnamectl set-hostname workernode01
+sudo hostnamectl set-hostname workernode03
 
 sudo swapoff -a 
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
@@ -51,3 +51,4 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo systemctl daemon-reload
 sudo systemctl start kubelet
 sudo systemctl enable kubelet.service
+  
