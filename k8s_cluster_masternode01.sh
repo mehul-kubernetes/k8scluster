@@ -20,9 +20,8 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
 
-
 sudo sysctl --system
-sudo apt-get install ca-certificates curl gnupg lsb-release -y
+sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
 
 sudo mkdir -p /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
