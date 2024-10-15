@@ -1,6 +1,6 @@
-sudo apt-get  update
-sudo apt-get upgrade
-sudo apt-get install net-tools
+sudo apt-get  update -y
+sudo apt-get upgrade -y
+sudo apt-get install net-tools -y
 sudo hostnamectl set-hostname workernode03
 
 sudo swapoff -a 
