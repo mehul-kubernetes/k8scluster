@@ -1,1 +1,3 @@
 curl <worker-external-ip>:<node-port> -H 'Host: webapp.myexample.co.in
+
+curl --resolve "web:80:$192.168.1.11" -i http://webapp.myexample.co.in
