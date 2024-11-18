@@ -63,11 +63,15 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 sudo kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
-kubeadm token create --print-join-command
+sudo kubeadm token create --print-join-command
 
-kubeadm token create --print-join-command > token.sh
+sudo kubeadm token create --print-join-command > /home/myadmin/token.sh
 
-wget /home/myadmin/.ssh/ https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/authorized_keys
+sudo rm -rf /home/myadmin/.ssh/authorized_keys
+
+cd /home/myadmin/.ssh/
+
+sudo wget https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/authorized_keys
 
 # kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 # kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
