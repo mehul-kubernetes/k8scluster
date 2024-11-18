@@ -58,4 +58,7 @@ sudo systemctl enable kubelet.service
 scp ssh myadmin@172.20.1.10:/home/myadmin/token.sh /home/myadmin/
 myadmin
 Admin@123456
+
+sh token.sh
+
   
