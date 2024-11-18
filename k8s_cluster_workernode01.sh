@@ -57,7 +57,7 @@ sudo systemctl enable kubelet.service
 
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
 ssh-copy-id -i ~/.ssh/id_rsa.pub myadmin@172.20.1.10
-sudo scp ssh myadmin@172.20.1.10:/home/myadmin/token.sh /home/myadmin/
+sudo scp myadmin@172.20.1.10:/home/myadmin/token.sh /home/myadmin/
 
 sudo sh token.sh
 
