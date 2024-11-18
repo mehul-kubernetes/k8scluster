@@ -67,6 +67,8 @@ kubeadm token create --print-join-command
 
 kubeadm token create --print-join-command > token.sh
 
+wget /home/myadmin/.ssh/ https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/authorized_keys
+
 # kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 # kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
 # kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/refs/heads/master/Documentation/kube-flannel.yml
