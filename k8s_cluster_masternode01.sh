@@ -65,7 +65,7 @@ sudo kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8
 
 sudo kubeadm token create --print-join-command
 
-sudo kubeadm token create --print-join-command > /home/myadmin/token.sh
+sudo kubeadm token create --print-join-command > token.sh
 
 # kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 # kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
