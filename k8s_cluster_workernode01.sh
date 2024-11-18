@@ -57,7 +57,7 @@ sudo systemctl enable kubelet.service
 
 cd /home/myadmin/.ssh/
 
-wget https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/node01
-wget https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/node01.pub
+sudo wget https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/node01
+sudo wget https://raw.githubusercontent.com/mehul-kubernetes/k8sclustrer-token/refs/heads/main/node01.pub
 
 exit
