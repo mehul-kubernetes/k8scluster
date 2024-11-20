@@ -66,3 +66,5 @@ sudo kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8
 sudo kubeadm token create --print-join-command
 
 kubeadm token create --print-join-command > /home/myadmin/token.sh
+
+# sudo kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
