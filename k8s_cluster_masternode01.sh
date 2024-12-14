@@ -70,4 +70,6 @@ sudo kubeadm token create --print-join-command
 
 kubeadm token create --print-join-command > /home/myadmin/token.sh
 
+sudo kubectl apply -f https://raw.githubusercontent.com/mehul-kubernetes/k8scluster/refs/heads/main/Ingress/nginx/controller/ingress-controller-nodeport-azure-deploy.yaml
+
 
