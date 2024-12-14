@@ -4,6 +4,8 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install net-tools -y
 sudo hostnamectl set-hostname masternode01
+sudo snap install etcd
+sudo apt install etcd-client
 
 sudo swapoff -a 
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
