@@ -1,0 +1,24 @@
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/baremetal/deploy.yaml
+
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/deploy.yaml
+
+-----------------------------------------------------------------------------------------------------------------------------------
+#Azure
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.0-beta.0/deploy/static/provider/cloud/deploy.yaml
+
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/baremetal/deploy.yaml
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+# NodePort
+
+kubectl apply -f https://raw.githubusercontent.com/mehul-kubernetes/cka-exam-preparation/refs/heads/main/Scenarios/Ingress/nginx/controller/ingress-controller-nodeport-azure-deploy.yaml
+
