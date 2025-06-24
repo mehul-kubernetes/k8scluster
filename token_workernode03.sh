@@ -1,10 +1,10 @@
 #/bin/sh
 
-yes y | ssh-keygen -t rsa -N "" -f /home/myadmin/.ssh/node01 > /dev/null
+yes y | ssh-keygen -t rsa -N "" -f /home/myadmin/.ssh/workernode03 > /dev/null
 
 eval "$(ssh-agent -s)"
 
-ssh-add /home/myadmin/.ssh/node01
+ssh-add /home/myadmin/.ssh/workernode03
 
 apt install sshpass
 
