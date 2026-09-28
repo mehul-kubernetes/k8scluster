@@ -67,7 +67,10 @@ sudo kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.
 #sudo kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
 sudo kubeadm token create --print-join-command
-
 kubeadm token create --print-join-command > /home/myadmin/token.sh
+
+sudo mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown myadmin:myadmin $HOME/.kube/config
 
 #sudo kubectl apply -f https://raw.githubusercontent.com/mehul-kubernetes/k8scluster/refs/heads/main/Ingress/nginx/controller/ingress-controller-nodeport-azure-deploy.yaml
