@@ -113,3 +113,7 @@ kubeadm token create --print-join-command > /home/myadmin/token.sh
 # Ingress Controller Install
 # ------------------------------------------------------------------
 #sudo kubectl apply -f https://raw.githubusercontent.com/mehul-kubernetes/k8scluster/refs/heads/main/Ingress/nginx/controller/ingress-controller-nodeport-azure-deploy.yaml
+
+echo "🎉═══════════════════════════════════════════════════════🎉"
+echo "✅ Kubernetes Masternode01 Setup Completed Successfully ☸️"
+echo "🎉═══════════════════════════════════════════════════════🎉"
