@@ -63,14 +63,16 @@ sudo mkdir -p $HOME/.kube
 sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+## Configure kubectl for myadmin
+sudo mkdir -p /home/myadmin/.kube
+sudo cp -f /etc/kubernetes/admin.conf /home/myadmin/.kube/config
+sudo chown -R myadmin:myadmin /home/myadmin/.kube
+sudo chmod 600 /home/myadmin/.kube/config
+
 sudo kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 #sudo kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
 sudo kubeadm token create --print-join-command
 kubeadm token create --print-join-command > /home/myadmin/token.sh
-
-sudo mkdir -p $HOME/.kube
-sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown myadmin:myadmin $HOME/.kube/config
 
 #sudo kubectl apply -f https://raw.githubusercontent.com/mehul-kubernetes/k8scluster/refs/heads/main/Ingress/nginx/controller/ingress-controller-nodeport-azure-deploy.yaml
