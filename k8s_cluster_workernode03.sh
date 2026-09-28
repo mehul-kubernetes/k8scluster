@@ -1,12 +1,29 @@
 #!/bin/bash
+set -e
+
+echo "🔷═══════════════════════════════════════════════════════🔷"
+echo "☸️  Kubernetes Workernode03 Setup Started 🚀"
+echo "🔷═══════════════════════════════════════════════════════🔷"
+
+# ------------------------------------------------------------------
+# Update OS
+# ------------------------------------------------------------------
 
 sudo apt-get  update -y
 sudo apt-get upgrade -y
 sudo apt-get install net-tools -y
 sudo hostnamectl set-hostname workernode03
 
+# ------------------------------------------------------------------
+# Disable Swap
+# ------------------------------------------------------------------
+
 sudo swapoff -a 
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+# ------------------------------------------------------------------
+# Kernel Modules
+# ------------------------------------------------------------------
 
 cat <<EOF | sudo tee /etc/modules-load.d/kubernetes.conf
 overlay
@@ -16,6 +33,10 @@ EOF
 sudo modprobe overlay
 sudo modprobe br_netfilter
 
+# ------------------------------------------------------------------
+# Configure Kubernetes Networking
+# ------------------------------------------------------------------
+
 cat <<EOF | sudo tee /etc/sysctl.d/kubernetes.conf
 net.bridge.bridge-nf-call-iptables  = 1
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -24,6 +45,10 @@ EOF
 
 sudo sysctl --system
 sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+
+# ------------------------------------------------------------------
+# Install Containerd
+# ------------------------------------------------------------------
 
 sudo mkdir -p /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -41,6 +66,10 @@ sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/c
 sudo systemctl restart containerd
 sudo systemctl enable containerd
 
+# ------------------------------------------------------------------
+# Install Kubernetes v1.30
+# ------------------------------------------------------------------
+
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
@@ -54,3 +83,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo systemctl daemon-reload
 sudo systemctl start kubelet
 sudo systemctl enable kubelet.service
+
+echo "🎉═══════════════════════════════════════════════════════🎉"
+echo "✅ Kubernetes Workernode03 Setup Completed Successfully ☸️"
+echo "🎉═══════════════════════════════════════════════════════🎉"
